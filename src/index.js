@@ -1,42 +1,43 @@
-async function getWeatherData(location) {
-  const weatherData = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=9b71b48ce7c0421aa7e60005242301&q=${location}&aqi=yes`,
-    {
-      method: "GET",
-      mode: "cors",
-    },
-  );
+import weather from "./weatherData";
+import "./style.css";
 
-  const astroData = await fetch(
-    `http://api.weatherapi.com/v1/astronomy.json?key=9b71b48ce7c0421aa7e60005242301&q=${location}&dt=2024-01-28`,
-    {
-      method: "GET",
-      mode: "cors",
-    },
-  );
-
-  const astroDataJson = await astroData.json();
-  const weatherDataJson = await weatherData.json();
-  const weatherObject = {
-    currentTemp: weatherDataJson.current.temp_f,
-    currentFeelsLike: weatherDataJson.current.feelslike_f,
-    windSpeed: weatherDataJson.current.wind_mph,
-    windDirection: weatherDataJson.current.wind_dir,
-    humidity: weatherDataJson.current.humidity,
-    air: weatherDataJson.current.air_quality["us-epa-index"],
-    uv: weatherDataJson.current.uv,
-    sunrise: astroDataJson.astronomy.astro.sunrise,
-    sunset: astroDataJson.astronomy.astro.sunset,
-    moonphase: astroDataJson.astronomy.astro.moon_phase,
-  };
-  return weatherObject;
+function createBox(html) {
+  const box = document.createElement("div");
+  box.classList.add("box");
+  box.innerHTML = html;
+  return box;
 }
 
-async function displayWeather() {
-  weatherObject = await getWeatherData("Port Richey");
-  for (const [key, value] of Object.entries(weatherObject)) {
-    console.log(`${key}: ${value}`);
-  }
-}
+const content = document.createElement("div");
+content.id = "content";
+content.classList.add("content");
 
-displayWeather();
+const currentConditionsBox = `<h2>Current Conditions</h2>
+<p id="current-temperature">Temperature:</p>
+<p id="current-description">Description:</p>`;
+
+const forecastBox = `<h2>Three-Day Forecast</h2>
+<div class="day" id="day1">
+  <p>Day 1</p>
+  <p id="day1-temperature">Temperature:</p>
+  <p id="day1-description">Description:</p>
+</div>
+<div class="day" id="day2">
+  <p>Day 2</p>
+  <p id="day2-temperature">Temperature:</p>
+  <p id="day2-description">Description:</p>
+</div>
+<div class="day" id="day3">
+  <p>Day 3</p>
+  <p id="day3-temperature">Temperature:</p>
+  <p id="day3-description">Description:</p>
+</div>`;
+
+const otherInfo = `<h2>Other Information</h2>
+<p id="moon-phase">Moon Phase:</p>
+<p id="tide-info">Tide:</p>`;
+
+document.body.appendChild(content);
+content.appendChild(createBox(currentConditionsBox));
+content.appendChild(createBox(forecastBox));
+content.appendChild(createBox(otherInfo));
