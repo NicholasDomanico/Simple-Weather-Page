@@ -34,7 +34,5 @@ async function getWeatherData(location) {
 
 export default async function displayWeather() {
   const weather = await getWeatherData("Port Richey");
-  for (const [key, value] of Object.entries(weather)) {
-    console.log(`${key}: ${value}`);
-  }
+  return weather;
 }
