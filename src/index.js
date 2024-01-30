@@ -15,5 +15,6 @@ async function displayCurrentWeather() {
   elements.uv.textContent += `${currentWeather.uv}`;
   elements.air.textContent += `${currentWeather.air}`;
   elements.dayOneTemp.textContent += `${currentWeather.forecast[0].day.maxtemp_f}`;
+  elements.dayOneTemp.textContent += `\r\n${currentWeather.forecast[0].day.mintemp_f}`;
 }
 displayCurrentWeather();

@@ -12,9 +12,9 @@ body {
 .box {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 30%;
-  padding: 10px;
+  min-width: 200px;
   border: 1px solid #0033ff;
   border-radius: 0.5rem;
   margin: 10px;
@@ -34,15 +34,50 @@ body {
 }
 
 .day {
-  display: flex;
-  border: 1px dashed;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 25% 25% 25% 25%;
+  justify-items: center;
+  align-items: center;
   width: 100%;
   margin-top: 10px;
-  padding: 2px;
+  font-size: 1.2rem;
+  font-weight: 1000;
+  color: rgb(0, 1, 33);
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 0.2rem;
 }
 
 .high-low {
+  white-space: pre;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+
+.forecast-temp {
+  grid-row-start: 2;
+}
+
+.rain-chance {
+  grid-row-start: 4;
+}
+
+.description {
+  grid-row-start: 3;
+}
+
+.day-header {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: blue;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }

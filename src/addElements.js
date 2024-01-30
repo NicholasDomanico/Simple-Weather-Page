@@ -7,22 +7,29 @@ const currentConditionsBox = `<h2>Current Conditions</h2>
 <p id="uv-index">UV Index: </p>
 <p id="air-quality">Air quality: </p>
 <p id=""> </p>`;
+// <div class="forecast-temp"><p id="day1-temperature">Temperature: <div id="day1-high-low" class="high-low"></div></p></div>
 
 const forecastBox = `<h2>Three-Day Forecast</h2>
 <div class="day" id="day1">
-  <p>Day 1</p>
-  <p id="day1-temperature">Temperature: <div id="day1-high-low" class="high-low"></div></p>
-  <p id="day1-description">Description: </p>
+  <p class="day-header">Today</p>
+  <p class="forecast-temp">Temperature: </p>
+  <div id="day1-high-low" class="high-low"></div>
+  <p id="day1-description" class="description">Description: </p>
+  <p id="day1-rain-chance" class="rain-chance">Rain Chance: </p>
 </div>
 <div class="day" id="day2">
-  <p>Day 2</p>
-  <p id="day2-temperature">Temperature: </p>
-  <p id="day2-description">Description: </p>
+  <p class="day-header">Tomorrow</p>
+  <p class="forecast-temp">Temperature: </p>
+  <div id="day2-high-low" class="high-low"></div>
+  <p id="day2-description" class="description">Description: </p>
+  <p id="day2-rain-chance" class="rain-chance">Rain Chance: </p>
 </div>
 <div class="day" id="day3">
-  <p>Day 3</p>
-  <p id="day3-temperature">Temperature: </p>
-  <p id="day3-description">Description: </p>
+  <p class="day-header">Day 3</p>
+  <p class="forecast-temp">Temperature: </p>
+  <div id="day3-high-low" class="high-low"></div>
+  <p id="day3-description" class="description">Description: </p>
+  <p id="day3-rain-chance" class="rain-chance">Rain Chance: </p>
 </div>`;
 
 const otherInfo = `<h2>Other Information</h2>
