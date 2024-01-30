@@ -6,7 +6,7 @@ body {
 
 .content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .box {
@@ -14,11 +14,35 @@ body {
   flex-direction: column;
   align-items: flex-start;
   width: 30%;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #0033ff;
-  background-color: #0033ff;
   border-radius: 0.5rem;
-  margin-bottom: 20px;
+  margin: 10px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 10px black;
+  box-shadow: 1px 1px 5px black;
+}
+
+.box > h2 {
+  border-bottom: 1px solid rgb(58, 58, 59);
+  color: white;
+}
+
+.box > p {
+  font-size: 1.2rem;
+  font-weight: 1000;
+  color: rgb(0, 1, 33);
+}
+
+.day {
+  display: flex;
+  border: 1px dashed;
+  width: 100%;
+  margin-top: 10px;
+  padding: 2px;
+}
+
+.high-low {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
