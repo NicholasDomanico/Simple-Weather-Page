@@ -41,8 +41,8 @@ const forecastBox = `<h2>Three-Day Forecast</h2>
 </div>`;
 
 const otherInfo = `<h2>Other Information</h2>
-<p id="moon-phase">Moon Phase:</p>
-<p id="surise">Sunrise: </p>
+<p id="moon-phase">Moon Phase: </p>
+<p id="sunrise">Sunrise: </p>
 <p id="sunset">Sunset: </p>`;
 
 function createBox(html) {

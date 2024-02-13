@@ -14,6 +14,9 @@ async function displayCurrentWeather() {
   elements.wind.textContent += `${currentWeather.windDirection} at ${currentWeather.windSpeed} MPH`;
   elements.uv.textContent += `${currentWeather.uv}`;
   elements.air.textContent += `${currentWeather.air}`;
+  elements.sunrise.textContent += `${currentWeather.sunrise}`;
+  elements.sunset.textContent += `${currentWeather.sunset}`;
+  elements.moonPhase.textContent += `${currentWeather.moonphase}`;
   // Forecast data
   elements.dayOneTemp.textContent += `${currentWeather.forecast[0].day.maxtemp_f}`;
   elements.dayOneTemp.textContent += `\r\n${currentWeather.forecast[0].day.mintemp_f}`;
