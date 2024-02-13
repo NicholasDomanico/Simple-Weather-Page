@@ -14,22 +14,30 @@ const forecastBox = `<h2>Three-Day Forecast</h2>
   <p class="day-header">Today</p>
   <p class="forecast-temp">Temperature: </p>
   <div id="day1-high-low" class="high-low"></div>
-  <p id="day1-description" class="description">Description: </p>
-  <p id="day1-rain-chance" class="rain-chance">Rain Chance: </p>
+  <p>Description: </p>
+  <p id="day1-description" class="description"></p>
+  <p>Rain Chance: </p>
+  <p id="day1-rain-chance" class="rain-chance"></p>
 </div>
+
 <div class="day" id="day2">
   <p class="day-header">Tomorrow</p>
   <p class="forecast-temp">Temperature: </p>
   <div id="day2-high-low" class="high-low"></div>
-  <p id="day2-description" class="description">Description: </p>
-  <p id="day2-rain-chance" class="rain-chance">Rain Chance: </p>
+  <p>Description: </p>
+  <p id="day2-description" class="description"></p>
+  <p>Rain Chance: </p>
+  <p id="day2-rain-chance" class="rain-chance"></p>
 </div>
+
 <div class="day" id="day3">
-  <p class="day-header">Day 3</p>
+  <p class="day-header">Next Day</p>
   <p class="forecast-temp">Temperature: </p>
   <div id="day3-high-low" class="high-low"></div>
-  <p id="day3-description" class="description">Description: </p>
-  <p id="day3-rain-chance" class="rain-chance">Rain Chance: </p>
+  <p>Description: </p>
+  <p id="day3-description" class="description"></p>
+  <p>Rain Chance: </p>
+  <p id="day3-rain-chance" class="rain-chance"></p>
 </div>`;
 
 const otherInfo = `<h2>Other Information</h2>
@@ -51,8 +59,8 @@ export function generateHomepage() {
 
   document.body.appendChild(content);
   content.appendChild(createBox(currentConditionsBox));
-  content.appendChild(createBox(forecastBox));
   content.appendChild(createBox(otherInfo));
+  content.appendChild(createBox(forecastBox));
 }
 
 export function elementsObject() {
@@ -68,6 +76,14 @@ export function elementsObject() {
     sunrise: document.getElementById("sunrise"),
     sunset: document.getElementById("sunset"),
     dayOneTemp: document.getElementById("day1-high-low"),
+    dayOneDescription: document.getElementById("day1-description"),
+    dayOneRainChance: document.getElementById("day1-rain-chance"),
+    dayTwoTemp: document.getElementById("day2-high-low"),
+    dayTwoDescription: document.getElementById("day2-description"),
+    dayTwoRainChance: document.getElementById("day2-rain-chance"),
+    dayThreeTemp: document.getElementById("day3-high-low"),
+    dayThreeDescription: document.getElementById("day3-description"),
+    dayThreeRainChance: document.getElementById("day3-rain-chance"),
   };
 
   return elements;

@@ -15,11 +15,10 @@ body {
   align-items: center;
   width: 30%;
   min-width: 200px;
-  border: 1px solid #0033ff;
+  border: 2px solid rgb(92, 92, 255);
   border-radius: 0.5rem;
   margin: 10px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 5px black;
 }
 
 .box > h2 {
@@ -44,9 +43,6 @@ body {
   font-size: 1.2rem;
   font-weight: 1000;
   color: rgb(0, 1, 33);
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-radius: 0.2rem;
 }
 
 .high-low {
@@ -64,17 +60,19 @@ body {
 
 .rain-chance {
   grid-row-start: 4;
+  grid-column-start: 2;
 }
 
 .description {
   grid-row-start: 3;
+  grid-column-start: 2;
 }
 
 .day-header {
   display: flex;
   justify-content: center;
   color: white;
-  background-color: blue;
+  background-color: rgb(92, 92, 255);
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
