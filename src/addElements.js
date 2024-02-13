@@ -1,13 +1,18 @@
 const currentConditionsBox = `<h2>Current Conditions</h2>
+<p>Description: </p>
 <p id="conditions"> </p>
-<p id="current-temperature">Temperature: </p>
-<p id="feels-like">Feels Like: </p>
-<p id="humidity">Humidity: </p>
-<p id="wind">Wind: </p>
-<p id="uv-index">UV Index: </p>
-<p id="air-quality">Air quality: </p>
-<p id=""> </p>`;
-// <div class="forecast-temp"><p id="day1-temperature">Temperature: <div id="day1-high-low" class="high-low"></div></p></div>
+<p>Temperature: </p>
+<p id="current-temperature"></p>
+<p>Feels Like: </p>
+<p id="feels-like"></p>
+<p>Humidity: </p>
+<p id="humidity"></p>
+<p>Wind: </p>
+<p id="wind"></p>
+<p>UV Index: </p>
+<p id="uv-index"></p>
+<p>Air Quality: </p>
+<p id="air-quality"></p>`;
 
 const forecastBox = `<h2>Three-Day Forecast</h2>
 <div class="day" id="day1">
@@ -41,9 +46,12 @@ const forecastBox = `<h2>Three-Day Forecast</h2>
 </div>`;
 
 const otherInfo = `<h2>Other Information</h2>
-<p id="moon-phase">Moon Phase: </p>
-<p id="sunrise">Sunrise: </p>
-<p id="sunset">Sunset: </p>`;
+<p>Moon Phase: </p>
+<p id="moon-phase"></p>
+<p>Sunrise: </p>
+<p id="sunrise"></p>
+<p>Sunset: </p>
+<p id="sunset"></p>`;
 
 function createBox(html) {
   const box = document.createElement("div");
