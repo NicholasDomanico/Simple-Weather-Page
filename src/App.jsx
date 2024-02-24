@@ -1,3 +1,11 @@
+import CurrentConditions from "./components/CurrentConditions";
+import Forecast from "./components/Forecast";
+
 export default function App() {
-  return <div>Hello</div>;
+  return (
+    <>
+      <CurrentConditions />
+      <Forecast />
+    </>
+  );
 }
