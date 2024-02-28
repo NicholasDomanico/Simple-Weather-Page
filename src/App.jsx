@@ -8,14 +8,20 @@ export default function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    let ignore = false;
     async function getWeather() {
       setLoading(true);
       const weather = await getWeatherData("Port Richey");
-      console.log(weather);
-      setData(weather);
+      if (!ignore) {
+        console.log(weather);
+        setData(weather);
+      }
       setLoading(false);
     }
     getWeather();
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   return (
