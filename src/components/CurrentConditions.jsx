@@ -1,11 +1,11 @@
-export default function CurrentConditions(props) {
+export default function CurrentConditions({ weather }) {
   return (
     <>
       <h2>Current Conditions</h2>
       <p>Description: </p>
-      <p id="conditions"> </p>
+      <p id="conditions">{weather.conditions}</p>
       <p>Temperature: </p>
-      <p id="current-temperature"></p>
+      <p id="current-temperature">{weather.currentTemp}</p>
       <p>Feels Like: </p>
       <p id="feels-like"></p>
       <p>Humidity: </p>

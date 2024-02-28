@@ -1,4 +1,4 @@
-async function getWeatherData(location) {
+export default async function getWeatherData(location) {
   const weatherData = await fetch(
     `http://api.weatherapi.com/v1/current.json?key=9b71b48ce7c0421aa7e60005242301&q=${location}&aqi=yes`,
     {
@@ -44,7 +44,7 @@ async function getWeatherData(location) {
   return weatherObject;
 }
 
-export default async function displayWeather() {
-  const weather = await getWeatherData("Port Richey");
-  return weather;
-}
+//export default async function displayWeather() {
+//  const weather = await getWeatherData("Port Richey");
+//  return weather;
+//}
