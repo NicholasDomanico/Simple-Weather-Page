@@ -15,7 +15,7 @@ export default function CurrentConditions({ weather }) {
       <p>UV Index: </p>
       <p id="uv-index"></p>
       <p>Air Quality: </p>
-      <p id="air-quality"></p>`
+      <p id="air-quality"></p>
     </>
   );
 }

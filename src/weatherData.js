@@ -43,8 +43,3 @@ export default async function getWeatherData(location) {
   };
   return weatherObject;
 }
-
-//export default async function displayWeather() {
-//  const weather = await getWeatherData("Port Richey");
-//  return weather;
-//}

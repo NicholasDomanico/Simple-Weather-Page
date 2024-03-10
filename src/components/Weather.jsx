@@ -2,6 +2,7 @@ import getWeatherData from "../weatherData.js";
 import CurrentConditions from "./CurrentConditions.jsx";
 import Forecast from "./Forecast.jsx";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export default function Weather(props) {
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,10 @@ export default function Weather(props) {
     <>
       <CurrentConditions weather={data} />
       <Forecast />
-      <button onClick={() => (location = "London")}></button>
     </>
   );
 }
+
+Weather.propTypes = {
+  location: PropTypes.string.isRequired,
+};
