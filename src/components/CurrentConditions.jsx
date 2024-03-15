@@ -62,11 +62,13 @@ export default function CurrentConditions({ weather }) {
       <p>Humidity: </p>
       <CurrentHumidity>{weather.humidity}%</CurrentHumidity>
       <p>Wind: </p>
-      <CurrentWind></CurrentWind>
+      <CurrentWind>
+        {weather.windDirection} at {weather.windSpeed} MPH
+      </CurrentWind>
       <p>UV Index: </p>
-      <CurrentUV></CurrentUV>
+      <CurrentUV>{weather.uv}</CurrentUV>
       <p>Air Quality: </p>
-      <CurrentAir></CurrentAir>
+      <CurrentAir>{weather.air}</CurrentAir>
     </CurrentConditionsBox>
   );
 }

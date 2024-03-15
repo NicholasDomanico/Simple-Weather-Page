@@ -37,8 +37,8 @@ export default function Weather(props) {
   return (
     <Homepage>
       <CurrentConditions weather={data} />
-      <Forecast />
-      <Other />
+      <Forecast weather={data} />
+      <Other weather={data} />
     </Homepage>
   );
 }
