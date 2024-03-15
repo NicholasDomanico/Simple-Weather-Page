@@ -2,7 +2,14 @@ import CurrentConditions from "./components/CurrentConditions";
 import Forecast from "./components/Forecast";
 import getWeatherData from "./weatherData.js";
 import Weather from "./components/Weather.jsx";
+import Background from "./components/Background.jsx";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
+
+const MainHeader = styled.h1`
+  margin: 0;
+  padding: 20px;
+`;
 
 export default function App() {
   const [location, setLocation] = useState("");
@@ -12,13 +19,13 @@ export default function App() {
   }
 
   return (
-    <>
-      <h1>Simple Weather Page</h1>
+    <Background>
+      <MainHeader>Simple Weather Page</MainHeader>
       <form onSubmit={handleSubmit}>
         <input type="text"></input>
         <button type="submit">Search</button>
       </form>
       <Weather location={location != "" ? location : "Port Richey"} />
-    </>
+    </Background>
   );
 }

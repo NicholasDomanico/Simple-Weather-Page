@@ -1,3 +1,4 @@
+import { symbol } from "prop-types";
 import styled from "styled-components";
 
 function Day(props) {
@@ -24,6 +25,8 @@ const ForecastBox = styled.div`
   border-radius: 0.5rem;
   margin: 10px;
   box-sizing: border-box;
+  font-size: 1.2rem;
+  font-weight: 1000;
 `;
 
 const DayWrapper = styled.section`
@@ -76,10 +79,13 @@ const RainChance = styled.div`
 
 export default function Forecast(props) {
   return (
-    <ForecastBox>
-      <Day day="Today" />
-      <Day day="Tommorow" />
-      <Day day="Next Day" />
-    </ForecastBox>
+    <>
+      <ForecastBox>
+        <h2>Three-Day Forecast</h2>
+        <Day day="Today" />
+        <Day day="Tommorow" />
+        <Day day="Next Day" />
+      </ForecastBox>
+    </>
   );
 }
