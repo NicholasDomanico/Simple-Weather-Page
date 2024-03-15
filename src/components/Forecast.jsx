@@ -14,6 +14,18 @@ function Day(props) {
   );
 }
 
+const ForecastBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  min-width: 200px;
+  border: 2px solid rgb(92, 92, 255);
+  border-radius: 0.5rem;
+  margin: 10px;
+  box-sizing: border-box;
+`;
+
 const DayWrapper = styled.section`
   display: grid;
   grid-template-columns: auto auto;
@@ -64,10 +76,10 @@ const RainChance = styled.div`
 
 export default function Forecast(props) {
   return (
-    <>
+    <ForecastBox>
       <Day day="Today" />
       <Day day="Tommorow" />
       <Day day="Next Day" />
-    </>
+    </ForecastBox>
   );
 }
