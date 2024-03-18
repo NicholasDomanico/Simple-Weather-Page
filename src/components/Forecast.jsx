@@ -5,7 +5,13 @@ function Day(props) {
     <DayWrapper>
       <DayHeader>{props.date}</DayHeader>
       <ForecastTemp>Temperature: </ForecastTemp>
-      <HighLow></HighLow>
+      <HighLow>
+        {props.weather.forecast &&
+          props.weather.forecast[props.day].day.maxtemp_f}
+        {`\n`}
+        {props.weather.forecast &&
+          props.weather.forecast[props.day].day.mintemp_f}
+      </HighLow>
       <p>Description: </p>
       <Description>
         {props.weather.forecast &&
