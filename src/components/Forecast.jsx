@@ -1,16 +1,22 @@
-import { symbol } from "prop-types";
 import styled from "styled-components";
 
 function Day(props) {
   return (
     <DayWrapper>
-      <DayHeader>{props.day}</DayHeader>
+      <DayHeader>{props.date}</DayHeader>
       <ForecastTemp>Temperature: </ForecastTemp>
       <HighLow></HighLow>
       <p>Description: </p>
-      <Description></Description>
+      <Description>
+        {props.weather.forecast &&
+          props.weather.forecast[props.day].day.condition.text}
+      </Description>
       <p>Rain Chance: </p>
-      <RainChance></RainChance>
+      <RainChance>
+        {props.weather.forecast &&
+          props.weather.forecast[props.day].day.daily_chance_of_rain}
+        %
+      </RainChance>
     </DayWrapper>
   );
 }
@@ -77,14 +83,14 @@ const RainChance = styled.div`
   grid-column-start: 2;
 `;
 
-export default function Forecast(props) {
+export default function Forecast({ weather }) {
   return (
     <>
       <ForecastBox>
         <h2>Three-Day Forecast</h2>
-        <Day day="Today" />
-        <Day day="Tommorow" />
-        <Day day="Next Day" />
+        <Day day="0" date="Today" weather={weather} />
+        <Day day="1" date="Tommorow" weather={weather} />
+        <Day day="2" date="Next Day" weather={weather} />
       </ForecastBox>
     </>
   );

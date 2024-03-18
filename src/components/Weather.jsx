@@ -12,27 +12,24 @@ const Homepage = styled.div`
 `;
 
 export default function Weather(props) {
-  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
-  let location = props.location;
+  let currentLocation = props.location != "" ? props.location : "Port Richey";
 
   useEffect(() => {
     let ignore = false;
     async function getWeather() {
-      setLoading(true);
-      const weather = await getWeatherData(location);
+      const weather = await getWeatherData(currentLocation);
       if (!ignore) {
-        console.log(weather);
         setData(weather);
       }
-      setLoading(false);
     }
+
     getWeather();
     return () => {
       ignore = true;
     };
-  }, [location]);
+  }, [currentLocation]);
 
   return (
     <Homepage>

@@ -1,9 +1,6 @@
-import CurrentConditions from "./components/CurrentConditions";
-import Forecast from "./components/Forecast";
-import getWeatherData from "./weatherData.js";
 import Weather from "./components/Weather.jsx";
 import Background from "./components/Background.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const MainHeader = styled.h1`
@@ -25,7 +22,7 @@ export default function App() {
         <input type="text"></input>
         <button type="submit">Search</button>
       </form>
-      <Weather location={location != "" ? location : "Port Richey"} />
+      <Weather location={location} />
     </Background>
   );
 }
