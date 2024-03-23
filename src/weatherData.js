@@ -8,7 +8,7 @@ export default async function getWeatherData(location) {
   );
 
   const astroData = await fetch(
-    `http://api.weatherapi.com/v1/astronomy.json?key=9b71b48ce7c0421aa7e60005242301&q=${location}&dt=2024-01-28`,
+    `http://api.weatherapi.com/v1/astronomy.json?key=9b71b48ce7c0421aa7e60005242301&q=${location}`,
     {
       method: "GET",
       mode: "cors",

@@ -44,7 +44,8 @@ const ForecastBox = styled.div`
 const DayWrapper = styled.section`
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: min-content;
+  grid-auto-rows: min-content;
   justify-items: center;
   align-items: center;
   width: 100%;

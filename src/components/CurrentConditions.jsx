@@ -3,8 +3,8 @@ import styled from "styled-components";
 const CurrentConditionsBox = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  grid-auto-rows: auto;
+  grid-template-rows: min-content;
+  grid-auto-rows: min-content;
   align-items: center;
   justify-items: center;
   width: 30%;
