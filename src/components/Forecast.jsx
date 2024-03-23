@@ -4,7 +4,7 @@ function Day(props) {
   return (
     <DayWrapper>
       <DayHeader>{props.date}</DayHeader>
-      <ForecastTemp>Temperature: </ForecastTemp>
+      <ForecastSection>Temperature: </ForecastSection>
       <HighLow>
         {props.weather.forecast &&
           props.weather.forecast[props.day].day.maxtemp_f}
@@ -12,12 +12,12 @@ function Day(props) {
         {props.weather.forecast &&
           props.weather.forecast[props.day].day.mintemp_f}
       </HighLow>
-      <p>Description: </p>
+      <ForecastSection>Description: </ForecastSection>
       <Description>
         {props.weather.forecast &&
           props.weather.forecast[props.day].day.condition.text}
       </Description>
-      <p>Rain Chance: </p>
+      <ForecastSection>Rain Chance: </ForecastSection>
       <RainChance>
         {props.weather.forecast &&
           props.weather.forecast[props.day].day.daily_chance_of_rain}
@@ -38,20 +38,27 @@ const ForecastBox = styled.div`
   margin: 10px;
   box-sizing: border-box;
   font-size: 1.2rem;
-  font-weight: 1000;
+  font-weight: 900;
+`;
+
+const ForecastHeader = styled.h2`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+  border-bottom: solid 1px;
 `;
 
 const DayWrapper = styled.section`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 60% auto;
   grid-template-rows: min-content;
   grid-auto-rows: min-content;
-  justify-items: center;
+  justify-items: start;
   align-items: center;
   width: 100%;
   margin-top: 10px;
   font-size: 1.2rem;
-  font-weight: 1000;
+  font-weight: 900;
   color: rgb(0, 1, 33);
 `;
 
@@ -65,10 +72,11 @@ const DayHeader = styled.p`
   padding-bottom: 5px;
   grid-column-start: 1;
   grid-column-end: 3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
-const ForecastTemp = styled.div`
-  grid-row-start: 2;
+const ForecastSection = styled.p`
+  margin: 5px;
 `;
 
 const HighLow = styled.div`
@@ -94,7 +102,7 @@ export default function Forecast({ weather }) {
   return (
     <>
       <ForecastBox>
-        <h2>Three-Day Forecast</h2>
+        <ForecastHeader>Three-Day Forecast</ForecastHeader>
         <Day day="0" date="Today" weather={weather} />
         <Day day="1" date="Tommorow" weather={weather} />
         <Day day="2" date="Next Day" weather={weather} />

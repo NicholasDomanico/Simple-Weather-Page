@@ -2,50 +2,33 @@ import styled from "styled-components";
 
 const CurrentConditionsBox = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 60% auto;
   grid-template-rows: min-content;
   grid-auto-rows: min-content;
   align-items: center;
-  justify-items: center;
+  justify-items: start;
   width: 30%;
   min-width: 200px;
   border: 2px solid rgb(92, 92, 255);
   border-radius: 0.5rem;
   margin: 10px;
   font-size: 1.2rem;
-  font-weight: 1000;
+  font-weight: 900;
   color: rgb(0, 1, 33);
 `;
 
 const CurrentConditionsHeader = styled.h2`
   grid-column-start: 1;
   grid-column-end: 3;
+  justify-self: center;
+  border-bottom: solid 1px;
 `;
 
-const CurrentDescription = styled.p`
-  grid-column-start: 2;
+const CurrentConditionsSection = styled.p`
+  margin: 5px;
 `;
 
-const CurrentTemperature = styled.p`
-  grid-column-start: 2;
-`;
-
-const CurrentFeelsLike = styled.p`
-  grid-column-start: 2;
-`;
-
-const CurrentHumidity = styled.p`
-  grid-column-start: 2;
-`;
-
-const CurrentWind = styled.p`
-  grid-column-start: 2;
-`;
-const CurrentUV = styled.p`
-  grid-column-start: 2;
-`;
-
-const CurrentAir = styled.p`
+const CurrentConditionInfo = styled.p`
   grid-column-start: 2;
 `;
 
@@ -53,22 +36,22 @@ export default function CurrentConditions({ weather }) {
   return (
     <CurrentConditionsBox>
       <CurrentConditionsHeader>Current Conditions</CurrentConditionsHeader>
-      <p>Description: </p>
-      <CurrentDescription>{weather.conditions}</CurrentDescription>
-      <p>Temperature: </p>
-      <CurrentTemperature>{weather.currentTemp}</CurrentTemperature>
-      <p>Feels Like: </p>
-      <CurrentFeelsLike>{weather.currentFeelsLike}</CurrentFeelsLike>
-      <p>Humidity: </p>
-      <CurrentHumidity>{weather.humidity}%</CurrentHumidity>
-      <p>Wind: </p>
-      <CurrentWind>
+      <CurrentConditionsSection>Description: </CurrentConditionsSection>
+      <CurrentConditionInfo>{weather.conditions}</CurrentConditionInfo>
+      <CurrentConditionsSection>Temperature: </CurrentConditionsSection>
+      <CurrentConditionInfo>{weather.currentTemp}</CurrentConditionInfo>
+      <CurrentConditionsSection>Feels Like: </CurrentConditionsSection>
+      <CurrentConditionInfo>{weather.currentFeelsLike}</CurrentConditionInfo>
+      <CurrentConditionsSection>Humidity: </CurrentConditionsSection>
+      <CurrentConditionInfo>{weather.humidity}%</CurrentConditionInfo>
+      <CurrentConditionsSection>Wind: </CurrentConditionsSection>
+      <CurrentConditionInfo>
         {weather.windDirection} at {weather.windSpeed} MPH
-      </CurrentWind>
-      <p>UV Index: </p>
-      <CurrentUV>{weather.uv}</CurrentUV>
-      <p>Air Quality: </p>
-      <CurrentAir>{weather.air}</CurrentAir>
+      </CurrentConditionInfo>
+      <CurrentConditionsSection>UV Index: </CurrentConditionsSection>
+      <CurrentConditionInfo>{weather.uv}</CurrentConditionInfo>
+      <CurrentConditionsSection>Air Quality: </CurrentConditionsSection>
+      <CurrentConditionInfo>{weather.air}</CurrentConditionInfo>
     </CurrentConditionsBox>
   );
 }
