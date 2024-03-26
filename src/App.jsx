@@ -3,6 +3,7 @@ import Background from "./components/Background.jsx";
 import { useState } from "react";
 import styled from "styled-components";
 import SunDiv from "./components/Sun.jsx";
+import Cloud from "./components/Clouds.jsx";
 
 const MainHeader = styled.h1`
   margin: 0;
@@ -48,6 +49,8 @@ export default function App() {
 
   return (
     <Background>
+      <Cloud></Cloud>
+
       <MainHeader>Simple Weather Page</MainHeader>
       <Search onSubmit={handleSubmit}>
         <SearchBar type="text"></SearchBar>
