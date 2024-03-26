@@ -2,6 +2,7 @@ import Weather from "./components/Weather.jsx";
 import Background from "./components/Background.jsx";
 import { useState } from "react";
 import styled from "styled-components";
+import Sun from "./components/Sun.jsx";
 
 const MainHeader = styled.h1`
   margin: 0;
@@ -51,6 +52,8 @@ export default function App() {
         <SearchButton type="submit">Search</SearchButton>
       </Search>
       <Weather location={location} />
+      <Sun />
+      <p>Hello</p>
     </Background>
   );
 }
