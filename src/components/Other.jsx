@@ -9,8 +9,6 @@ const OtherInfoBox = styled.div`
   justify-items: start;
   width: 30%;
   min-width: 200px;
-  border: 2px solid rgb(92, 92, 255);
-  border-radius: 0.5rem;
   margin: 10px;
   font-size: 1.2rem;
   font-weight: 900;

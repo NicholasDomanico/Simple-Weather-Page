@@ -33,8 +33,7 @@ const ForecastBox = styled.div`
   align-items: center;
   width: 30%;
   min-width: 200px;
-  border: 2px solid rgb(92, 92, 255);
-  border-radius: 0.5rem;
+
   margin: 10px;
   box-sizing: border-box;
   font-size: 1.2rem;
