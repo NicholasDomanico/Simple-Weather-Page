@@ -2,11 +2,12 @@ import Weather from "./components/Weather.jsx";
 import Background from "./components/Background.jsx";
 import { useState } from "react";
 import styled from "styled-components";
-import Sun from "./components/Sun.jsx";
+import SunDiv from "./components/Sun.jsx";
 
 const MainHeader = styled.h1`
   margin: 0;
   padding: 20px;
+  z-index: 1;
 `;
 
 const SearchBar = styled.input`
@@ -20,6 +21,7 @@ const SearchBar = styled.input`
   border-bottom-left-radius: 10rem;
   border-right-style: none;
   background-color: white;
+  z-index: 1;
 `;
 
 const Search = styled.form`
@@ -52,8 +54,7 @@ export default function App() {
         <SearchButton type="submit">Search</SearchButton>
       </Search>
       <Weather location={location} />
-      <Sun />
-      <p>Hello</p>
+      <SunDiv></SunDiv>
     </Background>
   );
 }

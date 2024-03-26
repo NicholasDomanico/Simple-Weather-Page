@@ -13,6 +13,7 @@ const CurrentConditionsBox = styled.div`
   font-size: 1.2rem;
   font-weight: 900;
   color: rgb(0, 1, 33);
+  z-index: 1;
 `;
 
 const CurrentConditionsHeader = styled.h2`

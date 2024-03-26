@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const SunAnimation = keyframes`
     from {
-      transform: rotate(0deg) translate(50vw);
+      transform: rotate(10deg) translate(50vw);
     }
 
     50% {
@@ -20,12 +20,11 @@ const SunDiv = styled.div`
   width: 60px;
   border-radius: 50%;
   background-color: yellow;
-  animation: ${SunAnimation} infinite reverse 10s -5s;
+  animation: ${SunAnimation} infinite reverse 10s;
   animation-timing-function: linear;
   box-shadow: 1px 1px 10px 10px yellow;
-  margin-top: 50%;
+  margin-top: 5%;
+  z-index: 0;
 `;
 
-export default function Sun() {
-  <SunDiv>hello</SunDiv>;
-}
+export default SunDiv;
