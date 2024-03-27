@@ -4,11 +4,12 @@ import { useState } from "react";
 import styled from "styled-components";
 import SunDiv from "./components/Sun.jsx";
 import Cloud from "./components/Clouds.jsx";
+import Raining from "./components/Rain.jsx";
 
 const MainHeader = styled.h1`
   margin: 0;
   padding: 20px;
-  z-index: 1;
+  z-index: 10;
 `;
 
 const SearchBar = styled.input`
@@ -22,13 +23,13 @@ const SearchBar = styled.input`
   border-bottom-left-radius: 10rem;
   border-right-style: none;
   background-color: white;
-  z-index: 1;
 `;
 
 const Search = styled.form`
   display: flex;
   flex-wrap: nowrap;
   width: 50%;
+  z-index: 10;
 `;
 
 const SearchButton = styled.button`
@@ -49,15 +50,12 @@ export default function App() {
 
   return (
     <Background>
-      <Cloud></Cloud>
-
       <MainHeader>Simple Weather Page</MainHeader>
       <Search onSubmit={handleSubmit}>
         <SearchBar type="text"></SearchBar>
         <SearchButton type="submit">Search</SearchButton>
       </Search>
       <Weather location={location} />
-      <SunDiv></SunDiv>
     </Background>
   );
 }

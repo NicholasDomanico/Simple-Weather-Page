@@ -18,7 +18,7 @@ const CloudWrapper = styled.div`
   top: px;
   left: 1px;
   z-index: 0;
-  animation: ${CloudAnimation} infinite 5s;
+  animation: ${CloudAnimation} infinite 50s;
 `;
 
 export default function Cloud() {

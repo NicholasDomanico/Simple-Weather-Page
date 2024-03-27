@@ -13,7 +13,7 @@ const OtherInfoBox = styled.div`
   font-size: 1.2rem;
   font-weight: 900;
   color: rgb(0, 1, 33);
-  z-index: 1;
+  z-index: 10;
 `;
 
 const OtherInfoHeader = styled.h2`

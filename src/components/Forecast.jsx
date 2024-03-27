@@ -38,7 +38,7 @@ const ForecastBox = styled.div`
   box-sizing: border-box;
   font-size: 1.2rem;
   font-weight: 900;
-  z-index: 1;
+  z-index: 10;
 `;
 
 const ForecastHeader = styled.h2`
