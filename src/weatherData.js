@@ -29,6 +29,7 @@ export default async function getWeatherData(location) {
   const forecastDataJson = await forecastData.json();
   const weatherObject = {
     conditions: weatherDataJson.current.condition.text,
+    conditionsCode: weatherDataJson.current.condition.code,
     currentTemp: weatherDataJson.current.temp_f,
     currentFeelsLike: weatherDataJson.current.feelslike_f,
     windSpeed: weatherDataJson.current.wind_mph,
