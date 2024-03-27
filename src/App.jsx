@@ -5,6 +5,7 @@ import styled from "styled-components";
 import SunDiv from "./components/Sun.jsx";
 import Cloud from "./components/Clouds.jsx";
 import Raining from "./components/Rain.jsx";
+import Overcast from "./components/Overcast.jsx";
 
 const MainHeader = styled.h1`
   margin: 0;

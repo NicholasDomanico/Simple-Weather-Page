@@ -21,6 +21,7 @@ const RainDrop = styled.div`
   background-color: blue;
   animation: ${Rainfall} infinite linear 1s;
   animation-delay: -${(props) => props.delay}ms;
+  z-index: 1;
 `;
 
 function Raining() {
