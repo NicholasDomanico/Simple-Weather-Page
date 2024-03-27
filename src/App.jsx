@@ -1,6 +1,7 @@
 import Weather from "./components/Weather.jsx";
+import getWeatherData from "./weatherData.js";
 import Background from "./components/Background.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import SunDiv from "./components/Sun.jsx";
 import Cloud from "./components/Clouds.jsx";
@@ -49,6 +50,25 @@ export default function App() {
     setLocation(e.target[0].value);
   }
 
+  const [data, setData] = useState([]);
+
+  let currentLocation = location != "" ? location : "Port Richey";
+
+  useEffect(() => {
+    let ignore = false;
+    async function getWeather() {
+      const weather = await getWeatherData(currentLocation);
+      if (!ignore) {
+        setData(weather);
+      }
+    }
+
+    getWeather();
+    return () => {
+      ignore = true;
+    };
+  }, [currentLocation]);
+
   return (
     <Background>
       <MainHeader>Simple Weather Page</MainHeader>
@@ -56,7 +76,7 @@ export default function App() {
         <SearchBar type="text"></SearchBar>
         <SearchButton type="submit">Search</SearchButton>
       </Search>
-      <Weather location={location} />
+      <Weather data={data} />
     </Background>
   );
 }
