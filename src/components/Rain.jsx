@@ -12,7 +12,7 @@ const Rainfall = keyframes`
 `;
 
 const RainDrop = styled.div`
-  display: flex-inline;
+  display: ${(props) => (isRaining(props.code) ? "inline-flex" : "none")};
   position: fixed;
   height: 2px;
   width: 40px;
@@ -24,7 +24,28 @@ const RainDrop = styled.div`
   z-index: 1;
 `;
 
-function Raining() {
+function isRaining(code) {
+  if (
+    code === 1150 ||
+    code === 1153 ||
+    code === 1180 ||
+    code === 1183 ||
+    code === 1186 ||
+    code === 1192 ||
+    code === 1195 ||
+    code === 1240 ||
+    code === 1243 ||
+    code === 1246 ||
+    code === 1273 ||
+    code === 1276
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function Raining(props) {
   const rainArray = [];
 
   for (let i = 0; i <= 150; i++) {
@@ -32,7 +53,7 @@ function Raining() {
   }
 
   return rainArray.map((num) => (
-    <RainDrop position={num} delay={Math.random() * 1000} />
+    <RainDrop code={props.code} position={num} delay={Math.random() * 1000} />
   ));
 }
 
