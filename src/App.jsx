@@ -71,7 +71,7 @@ export default function App() {
 
   return (
     <Background>
-      <SunDiv code={data.conditionsCode}></SunDiv>
+      <SunDiv time={data.currentTime} code={data.conditionsCode}></SunDiv>
       <Overcast code={data.conditionsCode}></Overcast>
       <Cloud code={data.conditionsCode}></Cloud>
       <Raining code={data.conditionsCode}></Raining>

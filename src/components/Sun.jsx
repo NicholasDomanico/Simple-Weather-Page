@@ -14,7 +14,18 @@ const SunAnimation = keyframes`
     }
 `;
 
-const SunDiv = styled.div`
+function getTime(time) {
+  if (time) {
+    const twentyFourHourTime = time.substring(11, time.length);
+    const [hour, minutes] = twentyFourHourTime.split(":");
+    const currentHour = hour % 12;
+    const twelveHourTime =
+      (currentHour < 10 ? "0" : "") + currentHour + ":" + minutes;
+    return twelveHourTime;
+  }
+}
+
+const Sun = styled.div`
   display: flex-inline;
   position: fixed;
   height: 60px;
@@ -28,4 +39,7 @@ const SunDiv = styled.div`
   z-index: 0;
 `;
 
-export default SunDiv;
+export default function SunDiv(props) {
+  getTime(props.time);
+  return <Sun></Sun>;
+}
