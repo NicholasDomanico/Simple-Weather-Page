@@ -10,7 +10,13 @@ const OvercastCloud = styled.div`
 `;
 
 function isOvercast(code) {
-  if (code === 1009 || code === 1030 || code === 1117 || code === 1189) {
+  if (
+    code === 1009 ||
+    code === 1030 ||
+    code === 1117 ||
+    code === 1135 ||
+    code >= 1087
+  ) {
     return true;
   } else {
     return false;
