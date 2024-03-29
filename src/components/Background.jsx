@@ -8,9 +8,9 @@ const Background = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: skyblue;
+  background-image: linear-gradient(#7dd9fd, #ace7ff);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding-top: 0;
   z-index: 1;
