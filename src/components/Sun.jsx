@@ -25,6 +25,15 @@ function getTime(time) {
   }
 }
 
+function getDayLength() {
+  const sunrise = "7:34";
+  const sunset = "8:30";
+  const sunRiseTime = sunrise.split(":");
+  const sunSetTime = sunset.split("");
+}
+
+getDayLength();
+
 const Sun = styled.div`
   display: flex-inline;
   position: fixed;
