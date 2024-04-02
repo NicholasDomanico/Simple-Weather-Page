@@ -69,6 +69,39 @@ export default function App() {
     };
   }, [currentLocation]);
 
+  function getTwelveHourTime(time) {
+    if (time) {
+      const twentyFourHourTime = time.substring(11, time.length);
+      const [hour, minutes] = twentyFourHourTime.split(":");
+      const currentHour = hour % 12;
+      const twelveHourTime =
+        (currentHour < 10 ? "0" : "") + currentHour + ":" + minutes;
+      return twelveHourTime;
+    }
+  }
+
+  function getTwentyFourHourTime(time) {
+    if (time) {
+      const period = time.substring(6, time.length);
+      let hour = time.substring(0, 2);
+      const minute = time.substring(3, 6);
+
+      if (hour === "12") {
+        hour = "00";
+      }
+      if (period === "PM") {
+        hour = parseInt(hour, 10) + 12;
+      }
+      return `${hour}:${minute}`;
+    }
+  }
+
+  function getDayLength() {
+    const sunriseHour = getTwentyFourHourTime(data.sunrise).slice(0, 2);
+    const sunsetHour = getTwentyFourHourTime(data.sunset).slice(0, 2);
+    return Number(sunsetHour) - Number(sunriseHour);
+  }
+
   return (
     <Background>
       <SunDiv time={data.currentTime} code={data.conditionsCode}></SunDiv>

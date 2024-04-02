@@ -14,26 +14,6 @@ const SunAnimation = keyframes`
     }
 `;
 
-function getTime(time) {
-  if (time) {
-    const twentyFourHourTime = time.substring(11, time.length);
-    const [hour, minutes] = twentyFourHourTime.split(":");
-    const currentHour = hour % 12;
-    const twelveHourTime =
-      (currentHour < 10 ? "0" : "") + currentHour + ":" + minutes;
-    return twelveHourTime;
-  }
-}
-
-function getDayLength() {
-  const sunrise = "7:34";
-  const sunset = "8:30";
-  const sunRiseTime = sunrise.split(":");
-  const sunSetTime = sunset.split("");
-}
-
-getDayLength();
-
 const Sun = styled.div`
   display: flex-inline;
   position: fixed;
@@ -49,6 +29,5 @@ const Sun = styled.div`
 `;
 
 export default function SunDiv(props) {
-  getTime(props.time);
   return <Sun></Sun>;
 }
