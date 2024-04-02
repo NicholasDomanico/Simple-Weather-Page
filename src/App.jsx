@@ -97,14 +97,20 @@ export default function App() {
   }
 
   function getDayLength() {
-    const sunriseHour = getTwentyFourHourTime(data.sunrise).slice(0, 2);
-    const sunsetHour = getTwentyFourHourTime(data.sunset).slice(0, 2);
-    return Number(sunsetHour) - Number(sunriseHour);
+    if (data.sunrise) {
+      const sunriseHour = getTwentyFourHourTime(data.sunrise).slice(0, 2);
+      const sunsetHour = getTwentyFourHourTime(data.sunset).slice(0, 2);
+      return Number(sunsetHour) - Number(sunriseHour);
+    }
   }
 
   return (
     <Background>
-      <SunDiv time={data.currentTime} code={data.conditionsCode}></SunDiv>
+      <SunDiv
+        dayLength={getDayLength}
+        time={data.currentTime}
+        code={data.conditionsCode}
+      ></SunDiv>
       <Overcast code={data.conditionsCode}></Overcast>
       <Cloud code={data.conditionsCode}></Cloud>
       <Raining code={data.conditionsCode}></Raining>

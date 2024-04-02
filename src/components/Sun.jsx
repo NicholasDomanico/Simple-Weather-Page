@@ -14,6 +14,10 @@ const SunAnimation = keyframes`
     }
 `;
 
+function animationLength(dayLength) {
+  return dayLength * 60 * 60;
+}
+
 const Sun = styled.div`
   display: flex-inline;
   position: fixed;
@@ -21,7 +25,8 @@ const Sun = styled.div`
   width: 60px;
   border-radius: 50%;
   background-color: yellow;
-  animation: ${SunAnimation} infinite reverse 5s;
+  animation: ${SunAnimation} infinite reverse;
+  animation-duration: ${(props) => animationLength(props.dayLength)}s;
   animation-timing-function: linear;
   box-shadow: 1px 1px 10px 10px yellow;
   margin-top: 100vh;
@@ -29,5 +34,5 @@ const Sun = styled.div`
 `;
 
 export default function SunDiv(props) {
-  return <Sun></Sun>;
+  return <Sun dayLength={props.dayLength() && props.dayLength()}></Sun>;
 }
