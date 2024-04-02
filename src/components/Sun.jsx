@@ -18,6 +18,10 @@ function animationLength(dayLength) {
   return dayLength * 60 * 60;
 }
 
+function getSunPosition(time, sunRiseTime) {
+  return (Number(sunRiseTime) - time) * 60 * 60;
+}
+
 const Sun = styled.div`
   display: flex-inline;
   position: fixed;
@@ -27,6 +31,7 @@ const Sun = styled.div`
   background-color: yellow;
   animation: ${SunAnimation} infinite reverse;
   animation-duration: ${(props) => animationLength(props.dayLength)}s;
+  animation-delay: ${(props) => getSunPosition(props.time, props.sunRise)};
   animation-timing-function: linear;
   box-shadow: 1px 1px 10px 10px yellow;
   margin-top: 100vh;
@@ -34,5 +39,10 @@ const Sun = styled.div`
 `;
 
 export default function SunDiv(props) {
-  return <Sun dayLength={props.dayLength() && props.dayLength()}></Sun>;
+  return (
+    <Sun
+      time={props.time && props.time}
+      dayLength={props.dayLength() && props.dayLength()}
+    ></Sun>
+  );
 }

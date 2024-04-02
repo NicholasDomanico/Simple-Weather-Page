@@ -71,8 +71,7 @@ export default function App() {
 
   function getTwelveHourTime(time) {
     if (time) {
-      const twentyFourHourTime = time.substring(11, time.length);
-      const [hour, minutes] = twentyFourHourTime.split(":");
+      const [hour, minutes] = time.split(":");
       const currentHour = hour % 12;
       const twelveHourTime =
         (currentHour < 10 ? "0" : "") + currentHour + ":" + minutes;
@@ -108,6 +107,7 @@ export default function App() {
     <Background>
       <SunDiv
         dayLength={getDayLength}
+        sunRise={getTwentyFourHourTime(data.sunrise)}
         time={data.currentTime}
         code={data.conditionsCode}
       ></SunDiv>
