@@ -8,12 +8,14 @@ import Cloud from "./components/Clouds.jsx";
 import Raining from "./components/Rain.jsx";
 import Overcast from "./components/Overcast.jsx";
 
+// Top header of webpage
 const MainHeader = styled.h1`
   margin: 0;
   padding: 20px;
   z-index: 10;
 `;
 
+// Input element of the search bar
 const SearchBar = styled.input`
   width: 90%;
   border-style: solid;
@@ -27,6 +29,7 @@ const SearchBar = styled.input`
   background-color: white;
 `;
 
+// Search form
 const Search = styled.form`
   display: flex;
   flex-wrap: nowrap;
@@ -52,10 +55,12 @@ export default function App() {
 
   const [data, setData] = useState([]);
 
+  // Sets default location if search bar is empty
   let currentLocation = location != "" ? location : "Port Richey";
 
   useEffect(() => {
     let ignore = false;
+    // Get weather object
     async function getWeather() {
       const weather = await getWeatherData(currentLocation);
       if (!ignore) {
@@ -69,6 +74,7 @@ export default function App() {
     };
   }, [currentLocation]);
 
+  // Converts 24 hour formatted time to 12 hour
   function getTwelveHourTime(time) {
     if (time) {
       const [hour, minutes] = time.split(":");
@@ -79,11 +85,12 @@ export default function App() {
     }
   }
 
+  // Converts 12 hour formatted time to 24 hour
   function getTwentyFourHourTime(time) {
     if (time) {
-      const period = time.substring(6, time.length);
+      const period = time.slice(-2);
       let hour = time.substring(0, 2);
-      const minute = time.substring(3, 6);
+      const minute = time.substring(3, 5);
 
       if (hour === "12") {
         hour = "00";
@@ -91,10 +98,12 @@ export default function App() {
       if (period === "PM") {
         hour = parseInt(hour, 10) + 12;
       }
+
       return `${hour}:${minute}`;
     }
   }
 
+  // Calculates the (rough) number of hours of daylight at the current location
   function getDayLength() {
     if (data.sunrise) {
       const sunriseHour = getTwentyFourHourTime(data.sunrise).slice(0, 2);
@@ -107,7 +116,8 @@ export default function App() {
     <Background>
       <SunDiv
         dayLength={getDayLength}
-        sunRise={getTwentyFourHourTime(data.sunrise)}
+        sunrise={getTwentyFourHourTime(data.sunrise)}
+        sunset={getTwentyFourHourTime(data.sunset)}
         time={data.currentTime}
         code={data.conditionsCode}
       ></SunDiv>
