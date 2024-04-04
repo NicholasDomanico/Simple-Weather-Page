@@ -111,10 +111,10 @@ export default function App() {
       return Number(sunsetHour) - Number(sunriseHour);
     }
   }
-
   return (
     <Background>
       <SunDiv
+        isDay={data.isDay}
         dayLength={getDayLength}
         sunrise={getTwentyFourHourTime(data.sunrise)}
         sunset={getTwentyFourHourTime(data.sunset)}

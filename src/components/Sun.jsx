@@ -55,12 +55,17 @@ const Sun = styled.div`
 `;
 
 export default function SunDiv(props) {
-  return (
-    <Sun
-      time={props.time && props.time}
-      sunrise={props.sunrise && props.sunrise.replace(":", "")}
-      sunset={props.sunset && props.sunset.replace(":", "")}
-      dayLength={props.dayLength() && props.dayLength()}
-    ></Sun>
-  );
+  console.log(props.isDay);
+  if (props.isDay === 1) {
+    return (
+      <Sun
+        time={props.time && props.time}
+        sunrise={props.sunrise && props.sunrise.replace(":", "")}
+        sunset={props.sunset && props.sunset.replace(":", "")}
+        dayLength={props.dayLength() && props.dayLength()}
+      ></Sun>
+    );
+  } else {
+    return <></>;
+  }
 }
