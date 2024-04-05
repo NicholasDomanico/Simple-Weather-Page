@@ -5,7 +5,10 @@ const OvercastCloud = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(#727272, #acacac);
+  background-image: linear-gradient(
+    rgb(114, 114, 114, 1),
+    rgb(172, 172, 172, 0.5)
+  );
   z-index: 1;
 `;
 
